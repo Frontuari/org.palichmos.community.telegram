@@ -1,4 +1,4 @@
-package org.idempiere.telegram.model;
+package org.palichmos.telegram.model;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import org.compiere.util.CLogger;

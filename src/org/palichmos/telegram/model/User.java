@@ -1,4 +1,4 @@
-package org.idempiere.telegram.model;
+package org.palichmos.telegram.model;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +35,7 @@ public class User
 		
 		try
 		{
-			pstmt = DB.prepareStatement("SELECT currentState, COALESCE(stateValue, '') AS stateValue FROM pm_telegram_user_state WHERE pm_telegram_bot_id = ? AND TelegramAccountID = ? AND AD_Client_ID = ? AND AD_Org_ID = ?", trxName);
+			pstmt = DB.prepareStatement("SELECT currentState, COALESCE(stateValue, '') AS stateValue FROM pm_telegram_userstate WHERE pm_telegrambot_id = ? AND TelegramAccountID = ? AND AD_Client_ID = ? AND AD_Org_ID = ?", trxName);
 			pstmt.setInt(1, pm_telegram_bot_id);
 			pstmt.setInt(2, chatID.intValue());
 			pstmt.setInt(3, Env.getAD_Client_ID(Env.getCtx()));
@@ -58,8 +58,9 @@ public class User
 			else
 			{
 				//Create first record user state
-				DB.executeUpdateEx("INSERT INTO pm_telegram_user_state (currentState, TelegramAccountID, pm_telegram_bot_id, AD_Client_ID, AD_Org_ID) VALUES (?, ?, ?, ?, ?)", 
-						new Object[] {null, chatID.intValue(), pm_telegram_bot_id, Env.getAD_Client_ID(Env.getCtx()), Env.getAD_Org_ID(Env.getCtx())}, trxName);
+				int PM_Telegram_UserState_ID = DB.getNextID(Env.getAD_Client_ID(Env.getCtx()), "pm_telegram_userstate", trxName);
+				DB.executeUpdateEx("INSERT INTO pm_telegram_userstate (pm_telegram_userstate_id, currentState, TelegramAccountID, pm_telegrambot_id, AD_Client_ID, AD_Org_ID) VALUES (?, ?, ?, ?, ?, ?)", 
+						new Object[] {PM_Telegram_UserState_ID, null, chatID.intValue(), pm_telegram_bot_id, Env.getAD_Client_ID(Env.getCtx()), Env.getAD_Org_ID(Env.getCtx())}, trxName);
 			}
 		}
 		catch (SQLException e)
@@ -132,7 +133,7 @@ public class User
 			lines += entry.getKey() + "##" + entry.getValue();
 		}
 		
-		DB.executeUpdateEx("UPDATE pm_telegram_user_state SET Updated = NOW(), currentState = ?, stateValue = ? WHERE pm_telegram_bot_id = ? AND TelegramAccountID = ? AND AD_Client_ID = ? AND AD_Org_ID = ?",
+		DB.executeUpdateEx("UPDATE pm_telegram_userstate SET Updated = NOW(), currentState = ?, stateValue = ? WHERE pm_telegrambot_id = ? AND TelegramAccountID = ? AND AD_Client_ID = ? AND AD_Org_ID = ?",
 							new Object[] {Integer.valueOf(currentState), lines, pm_telegram_bot_id, chatID.intValue(), Env.getAD_Client_ID(Env.getCtx()), Env.getAD_Org_ID(Env.getCtx())}, trxName);
 	}
 	

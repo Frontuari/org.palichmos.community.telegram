@@ -1,4 +1,4 @@
-package org.idempiere.telegram.adinterface;
+package org.palichmos.telegram.adinterface;
 
 import java.util.Collection;
 

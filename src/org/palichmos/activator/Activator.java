@@ -1,4 +1,4 @@
-package org.idempiere.activator;
+package org.palichmos.activator;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

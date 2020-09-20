@@ -1,11 +1,11 @@
-package org.idempiere.telegram.model;
+package org.palichmos.telegram.model;
 
 import java.util.List;
 import java.util.Properties;
 import org.adempiere.util.ServerContext;
 import org.compiere.util.CLogger;
 import org.compiere.util.Trx;
-import org.idempiere.telegram.adinterface.IBotHandler;
+import org.palichmos.telegram.adinterface.IBotHandler;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageCaption;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.api.objects.Update;

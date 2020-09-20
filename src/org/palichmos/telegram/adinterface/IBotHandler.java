@@ -1,8 +1,7 @@
-package org.idempiere.telegram.adinterface;
+package org.palichmos.telegram.adinterface;
 
 import java.sql.SQLException;
-
-import org.idempiere.telegram.model.Session;
+import org.palichmos.telegram.model.Session;
 
 public interface IBotHandler
 {

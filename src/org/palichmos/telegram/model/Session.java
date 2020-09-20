@@ -1,4 +1,4 @@
-package org.idempiere.telegram.model;
+package org.palichmos.telegram.model;
 
 import java.sql.SQLException;
 import java.util.Properties;

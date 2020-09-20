@@ -1,4 +1,4 @@
-package org.idempiere.telegram.model;
+package org.palichmos.telegram.model;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.Properties;
 import org.compiere.util.CLogger;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
-import org.idempiere.telegram.adinterface.IBotHandler;
+import org.palichmos.telegram.adinterface.IBotHandler;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
@@ -47,10 +47,10 @@ public abstract class AbstractTelegramBot extends TelegramLongPollingBot
 		}
 		
 		//Set default minimal context variable
-		Env.setContext(defaultCtx, "#AD_Client_ID", DB.getSQLValueEx(null, "SELECT AD_Client_ID FROM pm_telegram_bot WHERE pm_telegram_bot_id = ?", pm_telegram_bot_id));
-		Env.setContext(defaultCtx, "AD_Client_ID", DB.getSQLValueEx(null, "SELECT AD_Client_ID FROM pm_telegram_bot WHERE pm_telegram_bot_id = ?", pm_telegram_bot_id));
-		Env.setContext(defaultCtx, "#AD_Org_ID", DB.getSQLValueEx(null, "SELECT AD_Org_ID FROM pm_telegram_bot WHERE pm_telegram_bot_id = ?", pm_telegram_bot_id));
-		Env.setContext(defaultCtx, "AD_Org_ID", DB.getSQLValueEx(null, "SELECT AD_Org_ID FROM pm_telegram_bot WHERE pm_telegram_bot_id = ?", pm_telegram_bot_id));
+		Env.setContext(defaultCtx, "#AD_Client_ID", DB.getSQLValueEx(null, "SELECT AD_Client_ID FROM pm_telegrambot WHERE pm_telegrambot_id = ?", pm_telegram_bot_id));
+		Env.setContext(defaultCtx, "AD_Client_ID", DB.getSQLValueEx(null, "SELECT AD_Client_ID FROM pm_telegrambot WHERE pm_telegrambot_id = ?", pm_telegram_bot_id));
+		Env.setContext(defaultCtx, "#AD_Org_ID", DB.getSQLValueEx(null, "SELECT AD_Org_ID FROM pm_telegrambot WHERE pm_telegrambot_id = ?", pm_telegram_bot_id));
+		Env.setContext(defaultCtx, "AD_Org_ID", DB.getSQLValueEx(null, "SELECT AD_Org_ID FROM pm_telegrambot WHERE pm_telegrambot_id = ?", pm_telegram_bot_id));
 	}
 	
 	@Override
@@ -76,7 +76,7 @@ public abstract class AbstractTelegramBot extends TelegramLongPollingBot
 	public String getBotUsername() 
 	{
 		if (botUsername == null)
-			botUsername = DB.getSQLValueString(null, "SELECT Name FROM pm_telegram_bot WHERE pm_telegram_bot_id = ?", pm_telegram_bot_id);
+			botUsername = DB.getSQLValueString(null, "SELECT Name FROM pm_telegrambot WHERE pm_telegrambot_id = ?", pm_telegram_bot_id);
 		
 		return botUsername;
 	}
@@ -85,7 +85,7 @@ public abstract class AbstractTelegramBot extends TelegramLongPollingBot
 	public String getBotToken()
 	{
 		if (token == null)
-			token = DB.getSQLValueString(null, "SELECT token FROM pm_telegram_bot WHERE pm_telegram_bot_id = ?", pm_telegram_bot_id);
+			token = DB.getSQLValueString(null, "SELECT BotToken FROM pm_telegrambot WHERE pm_telegrambot_id = ?", pm_telegram_bot_id);
 		
 		return token;
 	}

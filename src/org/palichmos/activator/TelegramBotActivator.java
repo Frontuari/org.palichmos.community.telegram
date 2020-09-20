@@ -1,14 +1,14 @@
-package org.idempiere.activator;
+package org.palichmos.activator;
 
 import java.util.HashMap;
 import java.util.Map;
 import org.compiere.util.CLogger;
-import org.idempiere.telegram.adinterface.ITelegramBotFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTracker;
 import org.osgi.util.tracker.ServiceTrackerCustomizer;
+import org.palichmos.telegram.adinterface.ITelegramBotFactory;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;

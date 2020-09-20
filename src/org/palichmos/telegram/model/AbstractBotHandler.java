@@ -1,7 +1,7 @@
-package org.idempiere.telegram.model;
+package org.palichmos.telegram.model;
 
 import org.compiere.util.CLogger;
-import org.idempiere.telegram.adinterface.IBotHandler;
+import org.palichmos.telegram.adinterface.IBotHandler;
 import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.send.SendPhoto;
