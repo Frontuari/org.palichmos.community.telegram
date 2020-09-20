@@ -14,7 +14,8 @@ Bundle-ClassPath: .,
  lib/telegrambots-2.4.4.5-jar-with-dependencies.jar
 Bundle-Vendor: Palichmos Team
 Export-Package: org.idempiere.activator,
- org.idempiere.adinterface,
+ org.idempiere.telegram.adinterface,
+ org.idempiere.telegram.model,
  org.telegram.telegrambots,
  org.telegram.telegrambots.api.interfaces,
  org.telegram.telegrambots.api.methods,

@@ -3,7 +3,7 @@ package org.idempiere.activator;
 import java.util.HashMap;
 import java.util.Map;
 import org.compiere.util.CLogger;
-import org.idempiere.adinterface.ITelegramBotFactory;
+import org.idempiere.telegram.adinterface.ITelegramBotFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;

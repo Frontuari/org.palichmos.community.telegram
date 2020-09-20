@@ -1,4 +1,4 @@
-package org.idempiere.adinterface;
+package org.idempiere.telegram.adinterface;
 
 import java.util.Collection;
 
