@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Telegram
-Bundle-SymbolicName: org.ipalich.community.telegram
+Bundle-SymbolicName: org.palichmos.community.telegram
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
@@ -13,7 +13,8 @@ Bundle-ClassPath: .,
  lib/emoji-java-3.1.2.jar,
  lib/telegrambots-2.4.4.5-jar-with-dependencies.jar
 Bundle-Vendor: Palichmos Team
-Export-Package: org.idempiere.activator,
+Export-Package: com.vdurmont.emoji,
+ org.idempiere.activator,
  org.idempiere.telegram.adinterface,
  org.idempiere.telegram.model,
  org.telegram.telegrambots,
