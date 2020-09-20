@@ -1,0 +1,7 @@
+<project name="zklibrary" basedir="." default="copy">
+	<target name="copy">
+		<mkdir dir="lib" />
+		<get src="https://github.com/vdurmont/emoji-java/releases/download/v3.1.2/emoji-java-3.1.2.jar" dest="lib/emoji-java-3.1.2.jar" usetimestamp="true" verbose="true" retries="5" />
+		<get src="https://github.com/rubenlagus/TelegramBots/releases/download/2.4.4.5/telegrambots-2.4.4.5-jar-with-dependencies.jar" dest="lib/telegrambots-2.4.4.5-jar-with-dependencies.jar" usetimestamp="true" verbose="true" retries="5" />
+	</target>
+</project>
